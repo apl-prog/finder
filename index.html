@@ -6,19 +6,16 @@
   <title>Liberandos | Listen</title>
   <style>
     :root {
-      --bg: #0d0f12;
-      --panel: rgba(18, 22, 28, 0.92);
-      --panel-2: rgba(28, 34, 42, 0.9);
-      --text: #f3eee5;
-      --muted: #c1b6a6;
-      --soft: #a19381;
-      --line: rgba(255,255,255,0.12);
+      --bg: #000000;
+      --panel: #000000;
+      --panel-2: #000000;
+      --text: #ece8e1;
+      --muted: #d7d1c8;
+      --soft: #b8afa2;
+      --line: rgba(255,255,255,0.16);
       --line-strong: rgba(255,255,255,0.18);
-      --glow: rgba(197, 81, 32, 0.2);
-      --accent: #c55120;
-      --accent-2: #8f2a18;
-      --shadow: 0 20px 60px rgba(0,0,0,0.42);
-      --radius: 18px;
+      --shadow: none;
+      --radius: 0px;
       --max: 1040px;
     }
 
@@ -33,8 +30,7 @@
     body {
       margin: 0;
       font-family: "Courier New", Courier, monospace;
-      background:
-        linear-gradient(180deg, #0a0a0a 0%, #0a0a0a 100%);
+      background: #000000;
       color: var(--text);
       min-height: 100vh;
       letter-spacing: 0.01em;
@@ -45,14 +41,14 @@
     .wrap {
       width: min(calc(100% - 32px), var(--max));
       margin: 0 auto;
-      padding: 36px 0 60px;
+      padding: 28px 0 52px;
     }
 
     .hero {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(12,12,12,0.98), rgba(12,12,12,0.98));
-      border-radius: 30px;
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #000000;
+      border-radius: 0;
+      box-shadow: none;
       overflow: hidden;
       position: relative;
     }
@@ -67,12 +63,12 @@
     .hero-inner {
       position: relative;
       z-index: 1;
-      padding: 56px 34px 38px;
-      text-align: center;
+      padding: 48px 34px 28px;
+      text-align: left;
     }
 
     .eyebrow {
-      letter-spacing: 0.22em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       font-size: 10px;
       color: var(--soft);
@@ -81,79 +77,79 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
       line-height: 1.05;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-weight: normal;
+      font-weight: 700;
     }
 
     .sub {
-      width: min(100%, 660px);
-      margin: 20px auto 0;
+      width: min(100%, 720px);
+      margin: 18px 0 0;
       color: var(--muted);
       font-size: 0.98rem;
-      line-height: 1.75;
-      letter-spacing: 0.02em;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1.2fr 0.95fr;
-      gap: 22px;
-      margin-top: 24px;
+      gap: 18px;
+      margin-top: 18px;
       align-items: start;
     }
 
     .card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #000000;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 22px;
     }
 
     .card h2 {
       margin: 0 0 16px;
-      font-size: 0.98rem;
-      font-weight: normal;
+      font-size: 0.92rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: var(--soft);
     }
 
     .platforms,
     .socials {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .platform-btn {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 14px 16px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+      padding: 13px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 0;
+      background: #000000;
+      transition: border-color 0.18s ease, background 0.18s ease;
     }
 
     .platform-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(197,81,32,0.42);
-      background: rgba(255,255,255,0.055);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+      border-color: rgba(255,255,255,0.3);
+      background: #000000;
+      box-shadow: none;
+      transform: none;
     }
 
     .icon {
       width: 40px;
       height: 40px;
-      border-radius: 999px;
+      border-radius: 0;
       display: grid;
       place-items: center;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.09);
+      background: #000000;
+      border: 1px solid rgba(255,255,255,0.12);
       flex: 0 0 40px;
       color: var(--text);
     }
@@ -166,51 +162,53 @@
     }
 
     .label {
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: var(--text);
       letter-spacing: 0.02em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .meta {
       font-size: 0.8rem;
       color: var(--muted);
       line-height: 1.45;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
     }
 
     .art {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,0.1);
       display: block;
-      background: #161a20;
+      background: #000000;
     }
 
     .art-title {
       margin: 16px 0 6px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.15;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-weight: normal;
+      font-weight: 700;
     }
 
     .art-sub {
       margin: 0;
       color: var(--muted);
       font-size: 0.9rem;
-      line-height: 1.65;
-      letter-spacing: 0.02em;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
     }
 
     .note {
       margin-top: 14px;
       color: var(--soft);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       line-height: 1.55;
+      letter-spacing: 0.01em;
     }
 
     .footer-links {
@@ -222,23 +220,25 @@
 
     .footer-links a {
       padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 0;
+      background: #000000;
       color: var(--muted);
       font-size: 0.84rem;
       letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .footer-links a:hover {
       color: var(--text);
-      border-color: rgba(197,81,32,0.42);
-      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.3);
+      background: #000000;
     }
 
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+      background: rgba(255,255,255,0.12);
       margin: 20px 0;
     }
 
@@ -248,7 +248,7 @@
       }
 
       .hero-inner {
-        padding: 46px 20px 30px;
+        padding: 40px 18px 24px;
       }
 
       .card {
@@ -256,8 +256,8 @@
       }
 
       .sub {
-        font-size: 0.98rem;
-        line-height: 1.68;
+        font-size: 0.96rem;
+        line-height: 1.72;
       }
     }
   </style>
@@ -266,8 +266,8 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">Liberandos Transmission</div>
-        <h1>Listen / Enter</h1>
+        <div class="eyebrow">Liberandos</div>
+        <h1>Listen / Signal</h1>
         <p class="sub">
           Choose your channel, follow the project, and step into future transmissions.
         </p>
@@ -401,11 +401,9 @@
 
         <div class="footer-links">
           <a href="https://liberandos.com" target="_blank" rel="noopener noreferrer">Main Site</a>
-          <a href="https://liberandos.com/epk" target="_blank" rel="noopener noreferrer">EPK</a>
         </div>
       </div>
     </section>
   </main>
 </body>
 </html>
-
