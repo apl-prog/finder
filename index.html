@@ -4,39 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Liberandos | Listen</title>
-  <style>
 
+  <style>
     :root {
       --bg: #000000;
-      --panel: #000000;
-      --panel-2: #000000;
       --text: #ece8e1;
       --muted: #d7d1c8;
       --soft: #b8afa2;
       --line: rgba(255,255,255,0.16);
-      --line-strong: rgba(255,255,255,0.18);
-      --shadow: none;
-      --radius: 0px;
       --max: 1040px;
     }
 
     * { box-sizing: border-box; }
 
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-
     body {
       margin: 0;
       font-family: "Courier New", Courier, monospace;
-      background: #000000;
+      background: #000;
       color: var(--text);
-      min-height: 100vh;
-      letter-spacing: 0.01em;
       font-size: 1.16rem;
-      font-weight: 400;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -44,145 +30,30 @@
     .wrap {
       width: min(calc(100% - 32px), var(--max));
       margin: 0 auto;
-      padding: 28px 0 calc(100px + env(safe-area-inset-bottom));
+      padding: 28px 0 100px;
     }
 
     .hero {
       border: 1px solid rgba(255,255,255,0.08);
-      background: #000000;
-      border-radius: 0;
-      box-shadow: none;
-      overflow: hidden;
       position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
     }
 
     .hero-inner {
-      position: relative;
-      z-index: 1;
       padding: 40px 170px 14px 34px;
-      text-align: left;
     }
 
     .eyebrow {
-      font-family: "Courier New", Courier, monospace;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
       font-size: 3.3rem;
-      color: var(--text);
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-family: "Courier New", Courier, monospace;
-      margin: 4px 0 0;
-      font-size: 1.25rem;
-      line-height: 1.4;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
       font-weight: 700;
-      color: var(--soft);
+      margin-bottom: 6px;
     }
 
     .sub {
-      width: min(100%, 720px);
-      margin: 10px 0 0;
+      margin-top: 10px;
       color: var(--muted);
-      font-size: 1rem;
       line-height: 1.8;
-      letter-spacing: 0.01em;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-      align-items: start;
-    }
-
-    .card {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #000000;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 22px;
-    }
-
-    .card h2 {
-      font-family: "Courier New", Courier, monospace;
-      margin: 0 0 16px;
-      font-size: 1.12rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--soft);
-    }
-
-    .platforms,
-    .socials {
-      display: grid;
-      gap: 10px;
-    }
-
-    .platform-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 6px 0;
-      border: none;
-      border-radius: 0;
-      background: #000000;
-      transition: opacity 0.18s ease;
-    }
-
-    .platform-btn:hover {
-      background: #000000;
-      box-shadow: none;
-      transform: none;
-      opacity: 0.82;
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 0;
-      display: grid;
-      place-items: center;
-      background: #000000;
-      border: 1px solid rgba(255,255,255,0.12);
-      flex: 0 0 44px;
-      color: var(--text);
-    }
-
-    .label-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      min-width: 0;
-    }
-
-    .label {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 1.4rem;
-      color: var(--text);
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .meta {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.4;
-      letter-spacing: 0.01em;
+      max-width: 720px;
     }
 
     .hero-art {
@@ -190,227 +61,178 @@
       top: 28px;
       right: 34px;
       width: 120px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 0;
       border: 1px solid rgba(255,255,255,0.1);
-      display: block;
-      background: #000000;
     }
 
-    .utility-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
       margin-top: 18px;
     }
 
-    .utility-links a {
-      font-family: "Courier New", Courier, monospace;
-      padding: 10px 14px;
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 22px;
+    }
+
+    .card h2 {
+      font-size: 1.12rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--soft);
+      margin-bottom: 16px;
+    }
+
+    .platform-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 0;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
       border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 0;
-      background: #000000;
-      color: var(--muted);
-      font-size: 0.94rem;
-      letter-spacing: 0.03em;
+    }
+
+    .label {
+      font-size: 1.2rem;
       text-transform: uppercase;
       font-weight: 700;
     }
 
-    .utility-links a:hover {
-      color: var(--text);
-      border-color: rgba(255,255,255,0.3);
-      background: #000000;
+    .meta {
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
+    .utility-links {
+      margin-top: 18px;
+    }
+
+    .utility-links a {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 820px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 
-  .hero-inner {
-    padding: 32px 18px 22px;
-    text-align: center;
-  }
+      .grid {
+        grid-template-columns: 1fr;
+      }
 
-  .hero-inner > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+      .hero-inner {
+        padding: 32px 18px 22px;
+        text-align: center;
+      }
 
-  .eyebrow {
-    display: inline-block;
-    margin-bottom: 14px;
-  }
+      .hero-inner > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .hero-inner::after {
-    content: "";
-    display: block;
-    width: 72px;
-    height: 1px;
-    background: rgba(255,255,255,0.18);
-    margin: 22px auto 0;
-  }
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+      }
 
-  .hero-art {
-    position: static;
-    width: 120px;
-    margin: 20px auto 0;
-  }
+      .hero-inner::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 1px;
+        background: rgba(255,255,255,0.18);
+        margin: 22px auto 0;
+      }
 
-  .card {
-    padding: 18px;
-  }
+      .hero-art {
+        position: static;
+        width: 120px;
+        margin: 20px auto 0;
+      }
 
-  .sub {
-    font-size: 0.95rem;
-    line-height: 1.72;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
+      .sub {
+        max-width: 260px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <a href="https://liberandos.com" target="_blank" rel="noopener noreferrer" class="eyebrow">Liberandos</a>
-          
-          <p class="sub">
-            Future and past transmissions.
-          </p>
+          <a href="https://liberandos.com" target="_blank" class="eyebrow">Liberandos</a>
+          <p class="sub">Future and past transmissions.</p>
         </div>
-        <img class="hero-art" src="https://epk.liberandos.com/LiberandosBest.jpg" alt="Liberandos artwork" />
+
+        <img class="hero-art" src="https://epk.liberandos.com/LiberandosBest.jpg" />
       </div>
     </section>
 
     <section class="grid">
+
       <div class="card">
         <h2>Streaming</h2>
-        <div class="platforms">
-          <a class="platform-btn" href="https://open.spotify.com/artist/0HbCzEo3A58n31XLhVZZPT?si=K-qOc92lTsuH3hoCC-e8mw" target="_blank" rel="noopener noreferrer">
-            <span class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M7 10.2C10.7 8.9 14.7 9 17.8 10.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M7.9 13.1C10.4 12.2 13.3 12.3 15.7 13.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M8.9 15.8C10.5 15.3 12.2 15.4 13.8 16.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <span class="label-wrap">
-              <span class="label">Spotify</span>
-              <span class="meta">Stream on Spotify</span>
-            </span>
-          </a>
 
-          <a class="platform-btn" href="https://music.apple.com/us/song/blood-orange/1875345567" target="_blank" rel="noopener noreferrer">
-            <span class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.8 4.2c-.8.9-1.3 2-1.2 3.2 1.1.1 2.3-.5 3.1-1.4.8-.9 1.3-2 1.2-3.1-1.2-.1-2.3.4-3.1 1.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M16.8 8.3c-1.7-1.1-3.9-.8-4.8-.8-.9 0-2.8-.3-4.3.8-2 1.4-2.9 4.2-2 6.8 1 2.7 2.8 4.8 4.5 4.8.8 0 1.5-.3 2.3-.3.9 0 1.5.3 2.4.3 1.6 0 3.3-1.9 4.4-4.6.5-1.2.7-2 .8-2.1-3.1-1.2-3.2-4.3-3.3-4.9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span class="label-wrap">
-              <span class="label">Apple Music</span>
-              <span class="meta">Listen on Apple Music</span>
-            </span>
-          </a>
+        <a class="platform-btn" href="https://open.spotify.com/artist/0HbCzEo3A58n31XLhVZZPT?si=K-qOc92lTsuH3hoCC-e8mw">
+          <span class="icon">◯</span>
+          <div>
+            <div class="label">Spotify</div>
+            <div class="meta">Stream on Spotify</div>
+          </div>
+        </a>
 
-          <a class="platform-btn" href="https://music.youtube.com/channel/UCt5bDZPe_d_dnVr9GFT8VKw?si=7kIbysddEFhj9rWN" target="_blank" rel="noopener noreferrer">
-            <span class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M10 8.9L15.6 12 10 15.1V8.9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span class="label-wrap">
-              <span class="label">YouTube Music</span>
-              <span class="meta">Listen on YouTube Music</span>
-            </span>
-          </a>
+        <a class="platform-btn" href="https://music.apple.com/us/artist/liberandos/1886977897">
+          <span class="icon">◯</span>
+          <div>
+            <div class="label">Apple Music</div>
+            <div class="meta">Listen on Apple Music</div>
+          </div>
+        </a>
 
-          <a class="platform-btn" href="https://music.amazon.com.au/artists/B0GTJ6X6MJ/liberandos?marketplaceId=A39IBJ37TRP1C6&musicTerritory=AU&ref=dm_sh_9YFSiIZnRCL98Ry03ADQx4nzl" target="_blank" rel="noopener noreferrer">
-            <span class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="5" y="5" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M8.3 14.8c2.6 1.1 4.8 1 7.4-.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M14.9 13.6l1.3 1.1-1.6.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span class="label-wrap">
-              <span class="label">Amazon Music</span>
-              <span class="meta">Listen on Amazon Music</span>
-            </span>
-          </a>
-
-          <a class="platform-btn" href="https://link.deezer.com/s/32Pf9Ak4nB3wasjcPzgDp" target="_blank" rel="noopener noreferrer">
-            <span class="icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 15h2v3H6zM9 12h2v6H9zM12 10h2v8h-2zM15 12h2v6h-2zM18 14h2v4h-2z" stroke="currentColor" stroke-width="1.4"/>
-              </svg>
-            </span>
-            <span class="label-wrap">
-              <span class="label">Deezer</span>
-              <span class="meta">Listen on Deezer</span>
-            </span>
-          </a>
-        </div>
       </div>
 
-      <div>
-        <div class="card">
-          <h2>Socials</h2>
-          <div class="socials">
-            <a class="platform-btn" href="https://www.instagram.com/theliberandos/" target="_blank" rel="noopener noreferrer">
-              <span class="icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4.5" y="4.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="16.8" cy="7.3" r="0.9" fill="currentColor"/>
-                </svg>
-              </span>
-              <span class="label-wrap">
-                <span class="label">Instagram</span>
-                <span class="meta">Follow the project</span>
-              </span>
-            </a>
+      <div class="card">
+        <h2>Socials</h2>
 
-            <a class="platform-btn" href="https://www.youtube.com/@Liberandos" target="_blank" rel="noopener noreferrer">
-              <span class="icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3.8" y="7" width="16.4" height="10" rx="3" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M10.3 9.8L15 12l-4.7 2.2V9.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <span class="label-wrap">
-                <span class="label">YouTube</span>
-                <span class="meta">Videos, lyric films, transmissions</span>
-              </span>
-            </a>
-
-            <a class="platform-btn" href="https://www.facebook.com/liberandos/" target="_blank" rel="noopener noreferrer">
-              <span class="icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.6 20v-6.2h2.1l.3-2.5h-2.4V9.7c0-.8.2-1.3 1.3-1.3H16V6.2c-.5-.1-1.2-.2-2-.2-2 0-3.4 1.2-3.4 3.5v1.8H8.5v2.5h2.1V20h3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <span class="label-wrap">
-                <span class="label">Facebook</span>
-                <span class="meta">Updates and announcements</span>
-              </span>
-            </a>
+        <a class="platform-btn" href="https://www.instagram.com/theliberandos/">
+          <span class="icon">◯</span>
+          <div>
+            <div class="label">Instagram</div>
+            <div class="meta">Follow the project</div>
           </div>
-        </div>
+        </a>
+
+        <a class="platform-btn" href="https://www.youtube.com/@Liberandos">
+          <span class="icon">◯</span>
+          <div>
+            <div class="label">YouTube</div>
+            <div class="meta">Videos and transmissions</div>
+          </div>
+        </a>
 
         <div class="utility-links">
-          <a href="https://liberandos.com" target="_blank" rel="noopener noreferrer">Go To Main Site</a>
+          <a href="https://liberandos.com">Go To Main Site</a>
         </div>
+
       </div>
+
     </section>
+
   </main>
 </body>
 </html>
