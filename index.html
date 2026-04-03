@@ -127,8 +127,137 @@
       font-family: inherit;
     }
 
-    @media (max-width: 820px) {
+    /* MailerLite overrides */
+    #mlb2-39413866.ml-form-embedContainer {
+      display: block !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
 
+    #mlb2-39413866 .ml-form-align-center,
+    #mlb2-39413866 .ml-form-align-default {
+      text-align: left !important;
+      display: block !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedWrapper,
+    #mlb2-39413866 .ml-form-embedBody,
+    #mlb2-39413866 .ml-form-successBody {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      border-radius: 0 !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedBody .ml-form-formContent,
+    #mlb2-39413866 .ml-form-embedBody .ml-form-embedSubmit {
+      margin: 0 !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedBody .ml-form-fieldRow {
+      margin: 0 !important;
+    }
+
+    #mlb2-39413866 form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    #mlb2-39413866 .ml-field-group {
+      width: 100%;
+    }
+
+    #mlb2-39413866 .ml-form-formContent {
+      flex: 1 1 0%;
+      min-width: 200px;
+    }
+
+    #mlb2-39413866 .ml-form-embedSubmit {
+      float: none !important;
+      width: auto !important;
+      margin: 0 !important;
+    }
+
+    #mlb2-39413866 input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      background: transparent !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      color: var(--text) !important;
+      font-family: inherit !important;
+      font-size: 1rem !important;
+      line-height: normal !important;
+      padding: 10px !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      height: auto !important;
+    }
+
+    #mlb2-39413866 input[type="email"]::placeholder {
+      color: rgba(255,255,255,0.45) !important;
+      opacity: 1 !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedSubmit button {
+      background: transparent !important;
+      border: 1px solid rgba(255,255,255,0.3) !important;
+      color: var(--text) !important;
+      font-family: inherit !important;
+      font-size: 0.95rem !important;
+      font-weight: 400 !important;
+      text-transform: uppercase;
+      letter-spacing: normal !important;
+      line-height: normal !important;
+      padding: 10px 16px !important;
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      cursor: pointer;
+    }
+
+    #mlb2-39413866 .ml-form-embedSubmit button:hover {
+      background: rgba(255,255,255,0.05) !important;
+      border-color: rgba(255,255,255,0.35) !important;
+    }
+
+    #mlb2-39413866 .ml-form-successBody {
+      display: none;
+      padding-top: 12px !important;
+    }
+
+    #mlb2-39413866 .ml-form-successContent {
+      margin: 0 !important;
+      text-align: left !important;
+    }
+
+    #mlb2-39413866 .ml-form-successContent h4 {
+      display: none !important;
+    }
+
+    #mlb2-39413866 .ml-form-successContent p {
+      color: var(--soft) !important;
+      font-family: inherit !important;
+      font-size: 1rem !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedContent {
+      display: none !important;
+    }
+
+    #mlb2-39413866 .ml-form-embedBody .ml-form-embedSubmit button.loading {
+      display: none !important;
+    }
+
+    @media (max-width: 820px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -169,6 +298,19 @@
         margin: 0 auto;
         line-height: 1.7;
       }
+
+      #mlb2-39413866 form {
+        flex-direction: column;
+      }
+
+      #mlb2-39413866 .ml-form-formContent,
+      #mlb2-39413866 .ml-form-embedSubmit {
+        width: 100% !important;
+      }
+
+      #mlb2-39413866 .ml-form-embedSubmit button {
+        width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -176,7 +318,6 @@
 <body>
   <main class="wrap">
 
-    <!-- 1. Identity / Hero -->
     <section class="hero">
       <div class="hero-inner">
         <div>
@@ -188,7 +329,6 @@
       </div>
     </section>
 
-    <!-- 2. Where to listen / 3. Where to follow -->
     <section class="grid">
 
       <div class="card">
@@ -324,78 +464,68 @@
 
     </section>
 
-    <!-- 4. Quiet entry point -->
     <section class="card" style="margin-top: 18px;">
       <h2>Archive Access</h2>
 
       <p style="color: var(--muted); margin-bottom: 16px;">
-        Receive periodic transmissions and early access
+        Receive transmissions and early access to new work.
       </p>
 
-      <form id="email-form" action="https://formspree.io/f/xykbnwwr" method="POST" style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <input
-          type="email"
-          name="email"
-          placeholder="your@email.com"
-          required
-          style="
-            flex: 1;
-            min-width: 200px;
-            padding: 10px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: var(--text);
-          "
-        />
+      <div id="mlb2-39413866" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39413866">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
 
-        <button
-          type="submit"
-          style="
-            padding: 10px 16px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--text);
-            text-transform: uppercase;
-            cursor: pointer;
-          "
-        >
-          Enter
-        </button>
-      </form>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2242627/forms/183745745237575455/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="your@email.com" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
 
-      <p id="form-message" style="margin-top: 14px; color: var(--soft); display: none;">
-        Transmission received.
-      </p>
+                <input type="hidden" name="ml-submit" value="1">
+
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Enter</button>
+                  <button disabled="disabled" style="display: none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <p>Transmission received.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main>
 
   <script>
-    const form = document.getElementById("email-form");
-    const message = document.getElementById("form-message");
+    function ml_webform_success_39413866() {
+      var $ = window.ml_jQuery || window.jQuery;
+      var form = document.querySelector('.ml-subscribe-form-39413866 .row-form');
+      var success = document.querySelector('.ml-subscribe-form-39413866 .row-success');
 
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
+      if (form) form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    }
+  </script>
 
-      const data = new FormData(form);
-
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        form.reset();
-        message.style.display = "block";
-        message.innerText = "Transmission received.";
-      } else {
-        message.innerText = "Something went wrong.";
-        message.style.display = "block";
-      }
-    });
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2242627/forms/183745745237575455/takel");
   </script>
 </body>
 </html>
